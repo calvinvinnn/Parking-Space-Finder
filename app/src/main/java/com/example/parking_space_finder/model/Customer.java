@@ -3,8 +3,15 @@ package com.example.parking_space_finder.model;
 public class Customer {
     private String name;
     private String phoneNumber;
-    private String Address;
+    private String address;
     private Car car;
+
+    public Customer() {
+        name = "NULL";
+        phoneNumber = "NULL";
+        address = "NULL";
+
+    }
 
     public String getName() {
         return name;
@@ -23,11 +30,11 @@ public class Customer {
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        address = address;
     }
 
     public Car getCar() {

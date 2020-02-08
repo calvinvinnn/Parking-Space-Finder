@@ -5,6 +5,11 @@ public class Car {
     private String color;
     private String licencePlate;
 
+    public Car() {
+        make = "NULL";
+        color = "NULL";
+        licencePlate = "NULL";
+    }
 
     public String getMake() {
         return make;

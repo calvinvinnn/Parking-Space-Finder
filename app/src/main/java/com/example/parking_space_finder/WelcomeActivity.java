@@ -1,5 +1,7 @@
 package com.example.parking_space_finder;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -8,6 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class WelcomeActivity extends AppCompatActivity {
 
@@ -18,14 +21,27 @@ public class WelcomeActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        Button reg = findViewById(R.id.btn_register);
+        reg.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                //explosion = (ImageView)findViewById(R.id.animation_bomb1);
+                Intent i = RegistrationActivity.makeLaunchIntent(WelcomeActivity.this);
+                startActivity(i);
             }
         });
+
+        Button login = findViewById(R.id.btn_login);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //explosion = (ImageView)findViewById(R.id.animation_bomb1);
+                Intent i = LoginActivity.makeLaunchIntent(WelcomeActivity.this);
+                startActivity(i);
+            }
+        });
+
+
     }
 
     @Override
